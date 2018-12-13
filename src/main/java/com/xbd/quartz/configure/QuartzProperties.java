@@ -9,10 +9,6 @@ public class QuartzProperties {
     private ThreadPool threadPool = new ThreadPool();
     private Scheduler scheduler = new Scheduler();
 
-    public QuartzProperties() {
-
-    }
-
     public ThreadPool getThreadPool() {
         return threadPool;
     }
@@ -146,13 +142,13 @@ public class QuartzProperties {
 
         private String schedulerName;
 
-        private String ApplicationContextSchedulerContextKey = "applicationContext";
+        private String applicationContextSchedulerContextKey = "applicationContext";
 
         private boolean overwriteExistingJobs = true;
 
         private boolean autoStartup = true;
 
-        private int StartupDelay = 5;
+        private int startupDelay = 5;
 
         public Resource getConfigLocation() {
             return configLocation;
@@ -171,11 +167,11 @@ public class QuartzProperties {
         }
 
         public String getApplicationContextSchedulerContextKey() {
-            return ApplicationContextSchedulerContextKey;
+            return applicationContextSchedulerContextKey;
         }
 
         public void setApplicationContextSchedulerContextKey(String applicationContextSchedulerContextKey) {
-            ApplicationContextSchedulerContextKey = applicationContextSchedulerContextKey;
+        	this.applicationContextSchedulerContextKey = applicationContextSchedulerContextKey;
         }
 
         public boolean isOverwriteExistingJobs() {
@@ -195,11 +191,11 @@ public class QuartzProperties {
         }
 
         public int getStartupDelay() {
-            return StartupDelay;
+            return startupDelay;
         }
 
         public void setStartupDelay(int startupDelay) {
-            StartupDelay = startupDelay;
+        	this.startupDelay = startupDelay;
         }
 
     }
