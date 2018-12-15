@@ -20,7 +20,7 @@ public class RssJobBean extends QuartzJobBean {
 		try {
 			Long rssId = (Long) context.get(RSSIDKEY);
 			
-			this.getHandler(context).executeRss(rssId);
+			this.getHandler(context).executeRss(rssId, context);
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);

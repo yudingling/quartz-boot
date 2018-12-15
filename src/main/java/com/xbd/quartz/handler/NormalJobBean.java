@@ -18,7 +18,7 @@ public class NormalJobBean extends QuartzJobBean {
 		try {
 			String name = context.getJobDetail().getKey().getName();
 			
-			this.getHandler(context).executeNormal(name);
+			this.getHandler(context).executeNormal(name, context);
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
