@@ -139,6 +139,15 @@ public class QuartzTaskHandler {
     	}
     }
     
+    public void fireOnce(Task quartzTask) throws SchedulerException{
+    	Set<JobKey> keys = scheduler.getJobKeys(GroupMatcher.groupEquals(quartzTask.getGroup()));
+    	if(CollectionUtils.isNotEmpty(keys)){
+    		for(JobKey key : keys){
+    			scheduler.triggerJob(key);
+    		}
+    	}
+    }
+    
     private CronScheduleBuilder initCronScheduleBuilder(Task quartzTask) {
         CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(quartzTask.getCronExpression());
         
