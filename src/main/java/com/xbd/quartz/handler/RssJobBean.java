@@ -18,7 +18,7 @@ public class RssJobBean extends QuartzJobBean {
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 		try {
-			Long rssId = (Long) context.get(RSSIDKEY);
+			Long rssId = (Long) context.getMergedJobDataMap().get(RSSIDKEY);
 			
 			this.getHandler(context).executeRss(rssId, context);
 			
