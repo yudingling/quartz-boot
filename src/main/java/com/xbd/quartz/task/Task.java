@@ -3,10 +3,8 @@ package com.xbd.quartz.task;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Task implements Serializable {
+public abstract class Task implements Serializable {
 	private static final long serialVersionUID = 1488196450884232116L;
-	
-	private String group;
 	
 	private String description;
 
@@ -20,13 +18,7 @@ public class Task implements Serializable {
     
     private MisfireInstruction misfireInstruction = MisfireInstruction.MISFIRE_INSTRUCTION_DO_NOTHING;
 	
-    public String getGroup() {
-		return group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-	}
+    public abstract String getGroup();
 
 	public String getDescription() {
         return description;

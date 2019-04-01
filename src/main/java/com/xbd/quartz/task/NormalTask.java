@@ -12,4 +12,9 @@ public class NormalTask extends Task {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String getGroup() {
+		return this.name;
+	}
 }
